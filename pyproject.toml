@@ -1,0 +1,59 @@
+[project]
+name = "worldline"
+description = "model and plot world lines in spacetime diagrams, utilizing concepts from special relativity"
+authors = [
+    { name = "Zach Burnett", email = "zachary.r.burnett@gmail.com" },
+]
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "typepigeon",
+]
+dynamic = [
+    "version",
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.license]
+file = "LICENSE"
+content-type = "text/plain"
+
+[project.urls]
+Documentation = "https://worldline.readthedocs.io"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+docs = [
+    "m2r2",
+    "sphinx",
+    "sphinx-rtd-theme",
+    "sphinxcontrib-programoutput",
+]
+
+[build-system]
+requires = [
+    "setuptools>=61.2",
+    "setuptools_scm[toml]>=3.4",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+namespaces = false
+
+[tool.setuptools_scm]
+
+[tool.pytest.ini_options]
+addopts = "--verbose"
+python_files = [
+    "tests/**.py",
+]
+
